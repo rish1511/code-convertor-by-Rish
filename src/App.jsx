@@ -40,17 +40,16 @@ ${inputCode}
 
       const data = await res.json();
       console.log(JSON.stringify(data, null, 2));
-      console.log(data)
-  
+      console.log(data);
 
-     // Try message.content first
-const output = data?.choices?.[0]?.message?.content
-  // Agar choices nahi hai, check results
-  || data?.results?.[0]?.content
-  || "No output received";
+      // Try message.content first
+      const output =
+        data?.choices?.[0]?.message?.content ||
+        // Agar choices nahi hai, check results
+        data?.results?.[0]?.content ||
+        "No output received";
 
-setOutputCode(output);
-
+      setOutputCode(output);
     } catch (err) {
       console.error(err);
       setOutputCode("Error converting code");
@@ -75,7 +74,6 @@ setOutputCode(output);
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
-        
         <div className="text-center mb-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-3">
             <Code2 className="w-10 h-10 text-indigo-600" />
@@ -88,10 +86,8 @@ setOutputCode(output);
           </p>
         </div>
 
-        
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          
             <div className="p-4 md:p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border-b md:border-b-0 md:border-r border-gray-200 rounded-t-2xl md:rounded-tl-2xl md:rounded-bl-2xl">
               <div className="flex items-center gap-2 mb-4">
                 <Code2 className="w-5 h-5 text-indigo-600" />
@@ -117,7 +113,6 @@ setOutputCode(output);
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
                   >
-                    
                     <option value="pseudo code">Pseudo Code</option>
                     <option value="python">Python</option>
                     <option value="javascript">JavaScript</option>
@@ -172,7 +167,6 @@ setOutputCode(output);
               </div>
             </div>
 
-           
             <div className="p-4 md:p-6 bg-gradient-to-br from-gray-50 to-slate-50 rounded-b-2xl md:rounded-br-2xl md:rounded-tr-2xl">
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 gap-2">
                 <div className="flex items-center gap-2">
