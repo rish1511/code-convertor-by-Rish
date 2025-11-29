@@ -39,6 +39,8 @@ ${inputCode}
       });
 
       const data = await res.json();
+      console.log(JSON.stringify(data, null, 2));
+      console.log(data)
   
 
      // Try message.content first
