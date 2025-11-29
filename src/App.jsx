@@ -81,7 +81,7 @@ ${inputCode}
 
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
-            <div className="p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border-r border-gray-200">
+            <div className="md:p-6 p-2 bg-gradient-to-br from-indigo-50 to-purple-50 border-r border-gray-200">
               <div className="flex items-center gap-2 mb-4">
                 <Code2 className="w-5 h-5 text-indigo-600" />
                 <h2 className="text-xl font-semibold text-gray-800">
