@@ -67,30 +67,33 @@ ${inputCode}
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-3">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-3">
             <Code2 className="w-10 h-10 text-indigo-600" />
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
               AI Code Converter
             </h1>
           </div>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-base md:text-lg">
             Transform your code across languages instantly
           </p>
         </div>
 
+        {/* Main Card */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-0">
-            <div className="md:p-6 p-2 bg-gradient-to-br from-indigo-50 to-purple-50 border-r border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Input Section */}
+            <div className="p-4 md:p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border-b md:border-b-0 md:border-r border-gray-200 rounded-t-2xl md:rounded-tl-2xl md:rounded-bl-2xl">
               <div className="flex items-center gap-2 mb-4">
                 <Code2 className="w-5 h-5 text-indigo-600" />
-                <h2 className="text-xl font-semibold text-gray-800">
+                <h2 className="text-lg md:text-xl font-semibold text-gray-800">
                   Input Code
                 </h2>
               </div>
 
               <textarea
-                className="w-full h-80 p-4 bg-white border-2 border-indigo-200 rounded-xl resize-none focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all font-mono text-sm"
+                className="w-full h-64 md:h-80 p-4 bg-white border-2 border-indigo-200 rounded-xl resize-none focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all font-mono text-sm"
                 placeholder="Paste or type your code here..."
                 value={inputCode}
                 onChange={(e) => setInputCode(e.target.value)}
@@ -106,6 +109,7 @@ ${inputCode}
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
                   >
+                    {/* All language options */}
                     <option value="pseudo code">Pseudo Code</option>
                     <option value="python">Python</option>
                     <option value="javascript">JavaScript</option>
@@ -160,11 +164,12 @@ ${inputCode}
               </div>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-gray-50 to-slate-50">
-              <div className="flex items-center justify-between mb-4">
+            {/* Output Section */}
+            <div className="p-4 md:p-6 bg-gradient-to-br from-gray-50 to-slate-50 rounded-b-2xl md:rounded-br-2xl md:rounded-tr-2xl">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 gap-2">
                 <div className="flex items-center gap-2">
                   <Code2 className="w-5 h-5 text-purple-600" />
-                  <h2 className="text-xl font-semibold text-gray-800">
+                  <h2 className="text-lg md:text-xl font-semibold text-gray-800">
                     Output Code
                   </h2>
                 </div>
@@ -190,7 +195,7 @@ ${inputCode}
               </div>
 
               <div className="relative">
-                <pre className="w-full h-80 p-4 bg-gray-900 text-green-400 rounded-xl overflow-auto font-mono text-sm border-2 border-gray-700">
+                <pre className="w-full h-64 md:h-80 p-4 bg-gray-900 text-green-400 rounded-xl overflow-auto font-mono text-sm border-2 border-gray-700">
                   {outputCode || "// Converted code will appear here..."}
                 </pre>
 
@@ -212,6 +217,7 @@ ${inputCode}
           </div>
         </div>
 
+        {/* Footer */}
         <div className="text-center mt-8">
           <p className="text-gray-500 text-sm">
             Powered by AI • Supports multiple programming languages
